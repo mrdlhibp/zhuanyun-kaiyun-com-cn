@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云买球 · 简明产品指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde9d8 0%, #fbd6c2 50%, #f8c8b0 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      line-height: 1.6;
+      color: #3c2e1f;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 40px 40px 32px 32px;
+      box-shadow: 0 20px 35px rgba(170, 110, 70, 0.18), 0 8px 15px rgba(0, 0, 0, 0.05);
+      padding: 2.8rem 2.4rem;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #5f3e28;
+      margin-bottom: 0.25rem;
+      border-left: 6px solid #e4835a;
+      padding-left: 1.2rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #7d5e44;
+      margin-bottom: 2.2rem;
+      padding-left: 1.8rem;
+      font-style: italic;
+      border-bottom: 1px dashed #eccfc0;
+      padding-bottom: 0.6rem;
+    }
+
+    .summary {
+      background: #fbf3ec;
+      border-radius: 24px;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: inset 0 1px 4px rgba(228, 131, 90, 0.10);
+    }
+
+    .summary p {
+      font-size: 1.1rem;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: #fefaf7;
+      padding: 1.3rem 1.2rem;
+      border-radius: 24px;
+      border: 1px solid #eeded2;
+      transition: box-shadow 0.2s, transform 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(200, 140, 100, 0.12);
+      transform: translateY(-3px);
+      border-color: #dbb79f;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #784f32;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title::before {
+      content: "•";
+      color: #e4835a;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4f3a2a;
+    }
+
+    .suggestion-box {
+      background: #f5ede6;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 2.2rem 0;
+      border-left: 6px solid #dba07f;
+    }
+
+    .suggestion-box h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #5f3e28;
+      margin-bottom: 0.8rem;
+    }
+
+    .suggestion-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .suggestion-box li {
+      padding: 0.35rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .suggestion-box li::before {
+      content: "→";
+      color: #b27554;
+      font-weight: 500;
+    }
+
+    .faq-mini {
+      background: #fcf7f2;
+      border-radius: 28px;
+      padding: 1.5rem 1.8rem;
+      margin-top: 2rem;
+      border: 1px solid #ecd9cb;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #e6d3c4;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-mini details:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #6a4a33;
+      cursor: pointer;
+      padding: 0.3rem 0;
+      transition: color 0.15s;
+    }
+
+    .faq-mini summary:hover {
+      color: #9a6b4a;
+    }
+
+    .faq-mini details p {
+      margin: 0.5rem 0 0.2rem 1.2rem;
+      font-size: 0.95rem;
+      color: #4f3a2a;
+    }
+
+    .access-note {
+      background: #fff7f0;
+      border-radius: 30px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.8rem 0 0.8rem;
+      text-align: center;
+      border: 1px solid #ecc2ab;
+      font-size: 1rem;
+    }
+
+    .access-note a {
+      font-weight: 600;
+      color: #9b5e38;
+      text-decoration: none;
+      padding: 0.35rem 1rem;
+      border-radius: 60px;
+      background: #f5e2d4;
+      transition: background 0.2s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .access-note a:hover {
+      background: #e4835a;
+      color: #ffffff;
+    }
+
+    .footer-meta {
+      margin-top: 2.4rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #b08b74;
+      border-top: 1px solid #efddd1;
+      padding-top: 1.2rem;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+      .container {
+        padding: 1.8rem 1.2rem;
+        border-radius: 28px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        padding-left: 0.8rem;
+      }
+      .subhead {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+      }
+      .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .suggestion-box {
+        padding: 1.2rem 1.2rem;
+      }
+      .faq-mini {
+        padding: 1.2rem;
+      }
+      .access-note {
+        padding: 0.9rem 1rem;
+      }
+      .access-note a {
+        display: inline-block;
+        margin-top: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>开云买球 · 简明指南</h1>
+    <div class="subhead">产品说明 · 使用提醒 · 日常场景</div>
+
+    <div class="summary">
+      <p><strong>开云买球</strong>是一个面向运动与竞技类用户的综合服务平台，提供赛事资讯、数据参考及便捷的互动入口。平台聚焦于真实赛事信息整合，帮助用户快速获取相关内容，减少信息筛选成本。以下从特点、使用建议与访问提醒三个层面展开说明。</p>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="card">
+        <div class="card-title">信息聚合</div>
+        <p>汇集主流联赛、杯赛的实时数据与动态，覆盖多维度统计，方便你跟踪关注的项目。</p>
+      </div>
+      <div class="card">
+        <div class="card-title">轻量化体验</div>
+        <p>界面简洁，操作路径短。无论是通过手机还是桌面设备，都能快速找到核心功能入口。</p>
+      </div>
+      <div class="card">
+        <div class="card-title">场景适配</div>
+        <p>适合赛前浏览、赛中查询以及赛后复盘。日常碎片时间也能轻松使用，不拖沓。</p>
+      </div>
+      <div class="card">
+        <div class="card-title">持续完善</div>
+        <p>平台根据用户反馈不断优化内容结构，保持着合理的更新节奏，兼顾稳定与实用。</p>
+      </div>
+    </div>
+
+    <div class="suggestion-box">
+      <h3>💡 使用建议</h3>
+      <ul>
+        <li>首次使用可先浏览热门赛事板块，快速了解信息组织方式。</li>
+        <li>善用搜索或筛选功能，直接定位你关注的联赛或队伍。</li>
+        <li>内容仅供参考，涉及个人判断的部分请结合多方信息理性看待。</li>
+        <li>关注平台公告或更新日志，及时了解功能变化与维护安排。</li>
+      </ul>
+    </div>
+
+    <div class="faq-mini">
+      <details>
+        <summary>平台适合哪些用户使用？</summary>
+        <p>适合对体育赛事有常规兴趣的用户，包括日常观赛者、数据爱好者以及希望系统了解赛事动态的人群。</p>
+      </details>
+      <details>
+        <summary>信息更新是否及时？</summary>
+        <p>平台针对主流赛事保持较高的更新频率，但极端情况下可能出现延迟，建议结合官方渠道交叉确认。</p>
+      </details>
+      <details>
+        <summary>是否需要注册或下载？</summary>
+        <p>大部分内容可直接浏览，部分互动功能可能需要简单注册。无需额外下载，通过浏览器即可访问。</p>
+      </details>
+    </div>
+
+    <div class="access-note">
+      <span>若希望进一步了解服务详情，可前往 </span>
+      <a href="https://www.zhuanyun-kaiyun.com.cn">开云买球</a>
+      <span> 查阅更多说明与动态。</span>
+    </div>
+
+    <div class="footer-meta">
+      — 理性选择 · 信息仅供参考 —
+    </div>
+  </div>
+</body>
+</html>
